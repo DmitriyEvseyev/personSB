@@ -8,7 +8,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.*;
@@ -18,11 +17,11 @@ import java.util.List;
 @RestController
 @RequestMapping("/person")
 @Slf4j
-public class PersonController {
+public class PersonRESTController {
     private final PersonService personService;
 
     @Autowired
-    public PersonController(PersonService personService) {
+    public PersonRESTController(PersonService personService) {
         this.personService = personService;
     }
 
@@ -36,6 +35,7 @@ public class PersonController {
             }
             throw new CreatedExeption(errorMes.toString());
         }
+        log.info("NEW,  person -  {}", person);
         log.info("NEW,  person -  {}", person);
         personService.savePerson(person);
         return ResponseEntity.ok(HttpStatus.CREATED);
