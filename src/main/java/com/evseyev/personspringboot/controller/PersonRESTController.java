@@ -36,7 +36,9 @@ public class PersonRESTController {
             throw new CreatedExeption(errorMes.toString());
         }
         log.info("NEW,  person -  {}", person);
+        log.info("NEW,  person -  {}", person);
         log.info("person.getName() - {}", person.getName());
+
         personService.savePerson(person);
         return ResponseEntity.ok(HttpStatus.CREATED);
     }
