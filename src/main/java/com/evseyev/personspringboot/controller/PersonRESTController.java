@@ -47,6 +47,7 @@ public class PersonRESTController {
     public List<Person> getDealersList() {
         List<Person> personList = personService.getPersonsList();
         log.info("personList - {}", personList);
+        log.info("personList - {}", personList);
         return personList;
     }
 
