@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Person</title>
+</head>
+<body>
+<form>
+    <table class="tab">
+        <div th:each="Person : ${personList}">
+            <tr>
+                <td th:text="${Person.getId()}"></td>
+                <td th:text="${Person.getName()}"></td>
+                <td th:text="${Person.getAge()}"></td>
+            </tr>
+        </div>
+    </table>
+</form>
+</body>
+</html>

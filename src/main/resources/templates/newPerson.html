@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>newPerson</title>
+</head>
+<body>
+<form th:method="POST" th:action="@{/create}" th:object="${person}">
+    <h2> Name</h2>
+    <input name="name" type="text" th:field="*{name}" required/>
+    <h2> Age</h2>
+    <input name="Age" type="text" th:field="*{age}" required/>
+
+    <br/>
+    <div class="but">
+        <input type="submit" value="Ok"/>
+        <input type="reset" value="Cancel"/>
+    </div>
+</form>
+</body>
+</html>
